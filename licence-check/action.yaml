@@ -1,0 +1,7 @@
+name: "Licence check"
+description: "Verifies that licences of pip packages present in the calling workflow are compliant"
+runs:
+  using: "composite"
+  steps:
+    - run: python3 $GITHUB_ACTION_PATH/license_checker.py
+      shell: bash

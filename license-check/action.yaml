@@ -3,7 +3,9 @@ description: "Verifies that licences of pip packages present in the calling work
 runs:
   using: "composite"
   steps:
-    - run: ls $GITHUB_ACTION_PATH
+    - run: |
+        pip install -U pip-licenses
+        pip-licenses --from=mixed --format=json --output-file=licenses.json
       shell: bash
     - run: python3 $GITHUB_ACTION_PATH/license_check.py
       shell: bash

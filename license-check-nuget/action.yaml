@@ -1,0 +1,14 @@
+name: "Licence check for Nuget"
+description: "Verifies that licences of nuget packages present in the calling workflow are compliant"
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        dotnet new tool-manifest
+        dotnet tool install --local dotnet-project-licenses
+        dotnet dotnet-project-licenses -i ./ -u -o -j
+      shell: bash
+    - run: cat licenses.json
+      shell: bash
+    - run: dotnet run --project $GITHUB_ACTION_PATH/license-check.csproj
+      shell: bash

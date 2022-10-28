@@ -3,5 +3,5 @@ description: "Verifies that licences of pip packages present in the calling work
 runs:
   using: "composite"
   steps:
-    - run: python3 $GITHUB_ACTION_PATH/license_checker.py
+    - run: python3 $GITHUB_ACTION_PATH/license_check.py
       shell: bash

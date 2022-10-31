@@ -5,26 +5,25 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
-    - name: Build src
-      run: dotnet build ./license-check-nuget/src
-    - name: Run src
-      run: dotnet run --project ./license-check-nuget/src
-    - name: Build test
-      run: dotnet build ./license-check-nuget/test
-    - name: Run test
-      run: dotnet run --project ./license-check-nuget/test
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+      - name: Find licenses
+        uses: ./license-check-nuget/action.yaml
+        with:
+          entrypoint: ./licence-check-nuget/test
+      - name: Build src
+        run: dotnet build ./license-check-nuget/src
+      - name: Run src
+        run: dotnet run --project ./license-check-nuget/src

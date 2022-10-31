@@ -23,8 +23,8 @@ jobs:
     - name: Build src
       run: dotnet build ./license-check-nuget/src
     - name: Run src
-      run: dotnet run ./license-check-nuget/src
+      run: dotnet run --project ./license-check-nuget/src
     - name: Build test
       run: dotnet build ./license-check-nuget/test
     - name: Run test
-      run: dotnet run ./license-check-nuget/test
+      run: dotnet run --project ./license-check-nuget/test

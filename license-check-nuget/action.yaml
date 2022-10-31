@@ -10,5 +10,5 @@ runs:
       shell: bash
     - run: cat licenses.json
       shell: bash
-    - run: dotnet run --project $GITHUB_ACTION_PATH/license-check.csproj
+    - run: dotnet run --project $GITHUB_ACTION_PATH/src/license-check.csproj
       shell: bash

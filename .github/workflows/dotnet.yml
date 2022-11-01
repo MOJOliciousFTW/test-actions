@@ -23,7 +23,3 @@ jobs:
         uses: ./license-check-nuget
         with:
           entrypoint: ./license-check-nuget/test
-      - name: Build src
-        run: dotnet build ./license-check-nuget/src
-      - name: Run src
-        run: dotnet run --project ./license-check-nuget/src

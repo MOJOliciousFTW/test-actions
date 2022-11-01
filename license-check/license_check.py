@@ -6,8 +6,14 @@ workflow_error = "::error::"
 local_error = "Error: "
 error = workflow_error if os.getenv('CI') else local_error
 
-f1 = open("licenses.json")
-f2 = open("allowed_licenses.json")
+licenses_file = "licenses.json"
+allowed_licenses_file = "allowed_licenses.json"
+if not os.path.exists(allowed_licenses_file):
+    print(error + "No allowed_licenses.json file found!")
+    sys.exit(1)
+
+f1 = open(licenses_file)
+f2 = open(allowed_licenses_file)
 packages = json.load(f1)
 allowed_licenses = json.load(f2)
 f1.close()
@@ -35,9 +41,12 @@ for package in packages:
         if package["Name"] not in allowed_licenses["packages"]:
             license_error_packages.append(package)
 
-format_line = lambda package : "{:<20}: {}".format(package["Name"], package["License"])
 
-list_formatting = lambda packages : "\n\n" + "\n".join(format_line(package) for package in packages) + "\n"
+def format_line(package): return "{:<20}: {}".format(package["Name"], package["License"])
+
+
+def list_formatting(packages): return "\n\n" + "\n".join(format_line(package) for package in packages) + "\n"
+
 
 if copyleft_error_packages:
     print(error + copyleft_error.format(packages=list_formatting(copyleft_error_packages)))

@@ -11,7 +11,7 @@ runs:
     - run: |
         dotnet new tool-manifest
         dotnet tool install --local dotnet-project-licenses
-        dotnet dotnet-project-licenses -i ${{ inputs.entrypoint }} -o -j
+        dotnet dotnet-project-licenses -i ${{ inputs.entrypoint }} -o --json licenses.json
       shell: bash
     - run: cat licenses.json
       shell: bash

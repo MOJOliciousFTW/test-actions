@@ -5,7 +5,5 @@
   "copyleft": [
     "LGPL-2.1-only"
   ],
-  "packages": [
-    "NHibernate"
-  ]
+  "packages": []
 }

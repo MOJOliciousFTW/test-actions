@@ -33,18 +33,19 @@ In some cases, the software cannot automatically detect the license for a packag
 
 **Example usage:** 
 ```
-- name: Set up Python 3.10
-  uses: actions/setup-python@v4
-  with:
-	python-version: "3.10"
-- name: Install python packages
-  run: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-- name: License check
-  uses: peromvikgoodtech/test-actions/license-check@main
-  with:
-    entrypoint: ./
+steps:
+  - name: Set up Python 3.10
+    uses: actions/setup-python@v4
+    with:
+      python-version: "3.10"
+  - name: Install python packages
+    run: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+  - name: License check
+    uses: peromvikgoodtech/test-actions/license-check@main
+    with:
+      entrypoint: ./
 ```
 ### License check for Nuget(C#/.NET)
 **Prerequisites:**

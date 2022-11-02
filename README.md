@@ -9,17 +9,18 @@ In both cases, an entrypoint is needed (default: current directory = ./) where a
 **_allowed_licences.json_**
 ```
 {
-	"permissive": [
-		"MIT License",
-		"BSD License",
-		"Apache Software License",
-	],
-	"copyleft": [
-		"Mozilla Public License 2.0 (MPL 2.0)",
-		"GNU Lesser General Public License v2 (LGPLv2)"
-	],
-	"packages": [
-		"astroid",	]
+    "permissive": [
+        "MIT License",
+	"BSD License",
+	"Apache Software License",
+    ],
+    "copyleft": [
+        "Mozilla Public License 2.0 (MPL 2.0)",
+	"GNU Lesser General Public License v2 (LGPLv2)"
+    ],
+    "packages": [
+    	"astroid"
+    ]
 }
 ```
 Packages found to use any of the licenses listed under "permissive" are automatically approved for use.
@@ -57,9 +58,9 @@ steps:
   - name: Setup .NET
     uses: actions/setup-dotnet@v3
     with:
-	  dotnet-version: 6.0.x
+      dotnet-version: 6.0.x
   - name: License check
-	uses: peromvikgoodtech/test-actions/license-check-nuget@main
-	with:
-	  entrypoint: ./license-check-nuget/test
+      uses: peromvikgoodtech/test-actions/license-check-nuget@main
+      with:
+	entrypoint: ./license-check-nuget/test
 ```

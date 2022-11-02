@@ -60,7 +60,7 @@ steps:
     with:
       dotnet-version: 6.0.x
   - name: License check
-      uses: peromvikgoodtech/test-actions/license-check-nuget@main
-      with:
-	entrypoint: ./license-check-nuget/test
+    uses: peromvikgoodtech/test-actions/license-check-nuget@main
+    with:
+      entrypoint: ./license-check-nuget/test
 ```

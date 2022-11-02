@@ -11,7 +11,9 @@ runs:
     - run: |
         dotnet new tool-manifest
         dotnet tool install --local dotnet-project-licenses
-        dotnet dotnet-project-licenses -i ${{ inputs.entrypoint }} -o --json licenses.json
+        dotnet dotnet-project-licenses -i ./ -o --json licenses.json --print false
+      working-directory: ${{ inputs.entrypoint }}
       shell: bash
     - run: dotnet run --project $GITHUB_ACTION_PATH/src/LicenseCheck.csproj
+      working-directory: ${{ inputs.entrypoint }}
       shell: bash

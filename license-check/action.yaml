@@ -4,6 +4,7 @@ runs:
   using: "composite"
   steps:
     - run: |
+        cd $GITHUB_WORKSPACE
         pip install -U pip-licenses
         pip-licenses --from=mixed --format=json --output-file=licenses.json
         ls -a

@@ -22,6 +22,15 @@ f2.close()
 copyleft_error_packages = []
 license_error_packages = []
 
+if "permissive" not in allowed_licenses:
+    allowed_licenses["permissive"] = None
+
+if "copyleft" not in allowed_licenses:
+    allowed_licenses["copyleft"] = None
+
+if "packages" not in allowed_licenses:
+    allowed_licenses["packages"] = None
+
 
 copyleft_error = """The included package(s) listed below use a copyleft licence.
 Please ensure that your code will not be subject to a copyleft license as a consequence.

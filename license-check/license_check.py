@@ -23,13 +23,13 @@ copyleft_error_packages = []
 license_error_packages = []
 
 if "permissive" not in allowed_licenses:
-    allowed_licenses["permissive"] = None
+    allowed_licenses["permissive"] = []
 
 if "copyleft" not in allowed_licenses:
-    allowed_licenses["copyleft"] = None
+    allowed_licenses["copyleft"] = []
 
 if "packages" not in allowed_licenses:
-    allowed_licenses["packages"] = None
+    allowed_licenses["packages"] = []
 
 
 copyleft_error = """The included package(s) listed below use a copyleft licence.

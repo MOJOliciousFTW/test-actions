@@ -41,9 +41,15 @@ license_error = """The included package(s) listed below have licences that haven
 
 
 for package in packages:
-    if any(license in package["License"].split("; ") for license in allowed_licenses["permissive"]):
+    if any(
+        license in package["License"].split("; ")
+        for license in allowed_licenses["permissive"]
+    ):
         pass
-    elif any(license in package["License"].split("; ") for license in allowed_licenses["copyleft"]):
+    elif any(
+        license in package["License"].split("; ")
+        for license in allowed_licenses["copyleft"]
+    ):
         if package["Name"] not in allowed_licenses["packages"]:
             copyleft_error_packages.append(package)
     else:
@@ -51,16 +57,22 @@ for package in packages:
             license_error_packages.append(package)
 
 
-def format_line(package): return "{:<20}: {}".format(package["Name"], package["License"])
+def format_line(package):
+    return "{:<20}: {}".format(package["Name"], package["License"])
 
 
-def list_formatting(packages): return "\n\n" + "\n".join(format_line(package) for package in packages) + "\n"
+def list_formatting(packages):
+    return "\n\n" + "\n".join(format_line(package) for package in packages) + "\n"
 
 
 if copyleft_error_packages:
-    print(error + copyleft_error.format(packages=list_formatting(copyleft_error_packages)))
+    print(
+        error + copyleft_error.format(packages=list_formatting(copyleft_error_packages))
+    )
 if license_error_packages:
-    print(error + license_error.format(packages=list_formatting(license_error_packages)))
+    print(
+        error + license_error.format(packages=list_formatting(license_error_packages))
+    )
 
 exit_code = 1 if copyleft_error_packages or license_error_packages else 0
 sys.exit(exit_code)

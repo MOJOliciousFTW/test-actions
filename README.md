@@ -12,7 +12,7 @@ There are two versions of the license check action: One for python and one for C
 `create-report`: If set to `"true"`, a report is uploaded as an artifact in the calling workflow (default: `"false"`)
 
 **_allowed_licences.json_**
-
+```
 {
     "permissive": [
         "MIT License",

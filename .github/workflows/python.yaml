@@ -19,3 +19,4 @@ jobs:
         uses: ./license-check
         with:
           entrypoint: ./license-check/test
+          create-report: "true"

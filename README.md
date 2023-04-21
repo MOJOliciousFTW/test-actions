@@ -8,8 +8,8 @@ There is also an option for creating a report which will be uploaded as an artif
 There are two versions of the license check action: One for python and one for C#/.NET.
 
 ### Inputs
-`entrypoint`: In both cases, an entrypoint is needed where the `allowed_licenses.json` configuration file has to be located(see following section) (default: `.`)
-`create-report`: If set to `"true"`, a report is uploaded as an artifact in the calling workflow (default: `"false"`)
+- `entrypoint`: In both cases, an entrypoint is needed where the `allowed_licenses.json` configuration file has to be located(see following section) (default: `.`)
+- `create-report`: If set to `"true"`, a report is uploaded as an artifact in the calling workflow (default: `"false"`)
 
 **_allowed_licences.json_**
 ```

@@ -4,7 +4,7 @@ inputs:
   entrypoint:
     description: "Path to folder where allowed_licenses.json is located"
     required: false
-    default: "./"
+    default: "."
   create-report:
     description: "Create a report of the licenses found"
     required: false
@@ -36,5 +36,4 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: license-report
-        path: license-report.md
-      working-directory: ${{inputs.entrypoint}}
+        path: ${{inputs.entrypoint}}/license-report.md

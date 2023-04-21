@@ -3,8 +3,13 @@
 Reusable actions for use in github workflows
 
 ## License check
+Automatic verification that all installed packages are license compliant according to the users own criteria.
+There is also an option for creating a report which will be uploaded as an artifact in the calling workflow.
 There are two versions of the license check action: One for python and one for C#/.NET.
-In both cases, an entrypoint is needed (default: current directory = ./) where a configuration file has to be located:
+
+### Inputs
+- `entrypoint`: In both cases, an entrypoint is needed where the `allowed_licenses.json` configuration file has to be located(see following section) (default: `.`)
+- `create-report`: If set to `"true"`, a report is uploaded as an artifact in the calling workflow (default: `"false"`)
 
 **_allowed_licences.json_**
 ```
@@ -47,6 +52,7 @@ steps:
     uses: peromvikgoodtech/test-actions/license-check@main
     with:
       entrypoint: ./
+      create-report: "true"
 ```
 ### License check for Nuget(C#/.NET)
 **Prerequisites:**

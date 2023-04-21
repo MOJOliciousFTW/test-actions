@@ -4,15 +4,36 @@ inputs:
   entrypoint:
     description: "Path to folder where allowed_licenses.json is located"
     required: false
-    default: "./"
+    default: "."
+  create-report:
+    description: "Create a report of the licenses found"
+    required: false
+    default: "false"
 runs:
   using: "composite"
   steps:
-    - run: |
-        pip install -U pip-licenses
-        pip-licenses --from=mixed --format=json --output-file=licenses.json
+    - name: Install packages
+      run: pip install -U pip-licenses
+      shell: bash
+
+    - name: Create licenses.json
+      run: pip-licenses --from=mixed --format=json --output-file=licenses.json
       shell: bash
       working-directory: ${{inputs.entrypoint}}
-    - run: python3 $GITHUB_ACTION_PATH/license_check.py
+
+    - name: Check licences
+      run: python3 $GITHUB_ACTION_PATH/license_check.py
       shell: bash
       working-directory: ${{inputs.entrypoint}}
+
+    - name: Create license report
+      run: pip-licenses --with-urls --order=license --format=markdown --output-file=license-report.md
+      shell: bash
+      working-directory: ${{inputs.entrypoint}}
+
+    - name: Upload license report
+      if: ${{ inputs.create-report == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: license-report
+        path: ${{inputs.entrypoint}}/license-report.md

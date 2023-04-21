@@ -15,7 +15,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+      - name: Install python packages
+        run: pip install -r license-check/test/requirements.txt
       - name: Find licenses
         uses: ./license-check
         with:
           entrypoint: ./license-check/test
+          create-report: "true"

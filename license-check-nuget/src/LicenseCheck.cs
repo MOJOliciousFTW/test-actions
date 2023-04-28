@@ -1,12 +1,10 @@
-﻿using System.Linq;
-using System.Text.Json;
+﻿using System.Text.Json;
+const string workflowError = "::error::";
+const string local_error = "Error: ";
+var error = string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CI")) ? local_error : workflowError;
 
-string workflowError = "::error::";
-string local_error = "Error: ";
-string error = String.IsNullOrEmpty(Environment.GetEnvironmentVariable("CI")) ? local_error : workflowError;
-
-string packagesFile = "licenses.json";
-string allowedLicensesFile = "allowed_licenses.json";
+const string packagesFile = "licenses.json";
+const string allowedLicensesFile = "allowed_licenses.json";
 
 
 if (!File.Exists(allowedLicensesFile))
@@ -20,11 +18,11 @@ var options = new JsonSerializerOptions
     PropertyNameCaseInsensitive = true
 };
 
-string allowedLicensesString = File.ReadAllText(allowedLicensesFile);
-AllowedLicenses allowedLicenses = JsonSerializer.Deserialize<AllowedLicenses>(allowedLicensesString, options)!;
+var allowedLicensesString = File.ReadAllText(allowedLicensesFile);
+var allowedLicenses = JsonSerializer.Deserialize<AllowedLicenses>(allowedLicensesString, options)!;
 
-string packagesString = File.ReadAllText(packagesFile);
-List<Package> packages = JsonSerializer.Deserialize<List<Package>>(packagesString, options)!;
+var packagesString = File.ReadAllText(packagesFile);
+var packages = JsonSerializer.Deserialize<List<Package>>(packagesString, options)!;
 
 var copyleftError = error + @"The included package(s) listed below use a copyleft licence.
 Please ensure that your code will not be subject to a copyleft license as a consequence.
@@ -63,12 +61,12 @@ foreach (var package in packages)
 if (copyleftErrorPackages.Any())
 {
     var packageList = copyleftErrorPackages.Select(package => $"{package.PackageName,-20}: {package.LicenseType}");
-    Console.WriteLine(String.Format(copyleftError, String.Join(Environment.NewLine, packageList)));
+    Console.WriteLine(String.Format(copyleftError, string.Join(Environment.NewLine, packageList)));
 }
 if (licenseErrorPackages.Any())
 {
     var packageList = licenseErrorPackages.Select(package => $"{package.PackageName,-20}: {package.LicenseType}");
-    Console.WriteLine(String.Format(licenseError, String.Join(Environment.NewLine, packageList)));
+    Console.WriteLine(String.Format(licenseError, string.Join(Environment.NewLine, packageList)));
 }
 
 if (copyleftErrorPackages.Any() || licenseErrorPackages.Any())

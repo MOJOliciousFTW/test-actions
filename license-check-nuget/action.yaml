@@ -25,14 +25,9 @@ runs:
       working-directory: ${{ inputs.entrypoint }}
       shell: bash
 
-    - name: Create license report
-      run: dotnet dotnet-project-licenses -i ./ --md --outfile license-report.md --print false
-      shell: bash
-      working-directory: ${{inputs.entrypoint}}
-
     - name: Upload license report
       if: ${{ inputs.create-report == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: license-report
-        path: ${{inputs.entrypoint}}/license-report.md
+        path: ${{inputs.entrypoint}}/licenses.json

@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="..\action.yaml">
+      <Link>action.yaml</Link>
+    </Content>
+  </ItemGroup>
+
 </Project>

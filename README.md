@@ -10,6 +10,7 @@ There are two versions of the license check action: One for python and one for C
 ### Inputs
 - `entrypoint`: In both cases, an entrypoint is needed where the `allowed_licenses.json` configuration file has to be located(see following section) (default: `.`)
 - `create-report`: If set to `"true"`, a report is uploaded as an artifact in the calling workflow (default: `"false"`)
+- `file`: Only relevant for C#/.NET projects. Allows the user to point to a specific project or solution. The supplied path has to be **relative** to the `entrypoint`.
 
 **_allowed_licences.json_**
 ```
@@ -52,11 +53,13 @@ steps:
     uses: peromvikgoodtech/test-actions/license-check@main
     with:
       entrypoint: ./
-      create-report: "true"
+      create-report: true
 ```
 ### License check for Nuget(C#/.NET)
 **Prerequisites:**
-* The entrypoint points to a directory where both the _allowed_licenses.json_ file and your project's _.csproj_ or _.sln_ file reside.
+* The entrypoint points to a directory where the _allowed_licenses.json_ file resides.
+* If the project file is not in the same directory, you will have to supply a relative path to the `entrypoint` path.
+* If you want to analyze a solution, you have to explicitly supply the path to the `.sln` file in the `"file"` input. 
 
 **Example usage:**
 ```
@@ -69,4 +72,6 @@ steps:
     uses: peromvikgoodtech/test-actions/license-check-nuget@main
     with:
       entrypoint: ./license-check-nuget/test
+      file: TestProject.csproj
+      create-report: true
 ```

@@ -3,7 +3,7 @@
     "License": "Apache Software License",
     "Name": "aiofiles",
     "URL": "https://github.com/Tinche/aiofiles",
-    "Version": "22.1.0"
+    "Version": "23.1.0"
   },
   {
     "License": "Apache Software License",
@@ -15,7 +15,7 @@
     "License": "Apache Software License; BSD License",
     "Name": "cryptography",
     "URL": "https://github.com/pyca/cryptography",
-    "Version": "39.0.0"
+    "Version": "40.0.2"
   },
   {
     "License": "Apache Software License; BSD License",
@@ -33,19 +33,19 @@
     "License": "GNU Lesser General Public License v3 or later (LGPLv3+)",
     "Name": "asyncua",
     "URL": "http://freeopcua.github.io/",
-    "Version": "1.0.1"
+    "Version": "1.0.2"
   },
   {
     "License": "MIT License",
     "Name": "aiosqlite",
-    "URL": "https://aiosqlite.omnilib.dev",
-    "Version": "0.18.0"
+    "URL": "UNKNOWN",
+    "Version": "0.19.0"
   },
   {
     "License": "MIT License",
     "Name": "art",
     "URL": "https://github.com/sepandhaghighi/art",
-    "Version": "5.8"
+    "Version": "5.9"
   },
   {
     "License": "MIT License",
@@ -57,7 +57,7 @@
     "License": "MIT License",
     "Name": "pytz",
     "URL": "http://pythonhosted.org/pytz",
-    "Version": "2022.7.1"
+    "Version": "2023.3"
   },
   {
     "License": "MIT License",

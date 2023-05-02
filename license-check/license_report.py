@@ -2,6 +2,11 @@ import os
 import sys
 import json
 
+# This script takes a folder of license reports
+# and merges them together in a common format.
+# The format can be read in excel using a query on the resulting json file.
+# See LicenseReport.xlsx for reference
+
 
 def normalize_data(obj):
     if "Name" in obj and "Version" in obj and "License" in obj and "URL" in obj:

@@ -16,13 +16,11 @@ runs:
       run: |
         dotnet new tool-manifest
         dotnet tool install --local dotnet-project-licenses
-        dotnet dotnet-project-licenses -i ./ -o --json licenses.json --print false
-      working-directory: ${{ inputs.entrypoint }}
+        dotnet dotnet-project-licenses -i ${{ inputs.entrypoint }} -o --json licenses.json --print false
       shell: bash
 
     - name: Check licenses
       run: dotnet run --project $GITHUB_ACTION_PATH/src/LicenseCheck.csproj
-      working-directory: ${{ inputs.entrypoint }}
       shell: bash
 
     - name: Upload license report
@@ -30,4 +28,4 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: license-report
-        path: ${{inputs.entrypoint}}/licenses.json
+        path: licenses.json

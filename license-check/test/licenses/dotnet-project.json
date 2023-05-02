@@ -1,0 +1,54 @@
+[
+    {
+        "PackageName": "Figgle",
+        "PackageVersion": "0.4.0",
+        "PackageUrl": "https://github.com/drewnoakes/figgle",
+        "Copyright": "Copyright Drew Noakes 2017-2020",
+        "Authors": [
+            "Drew Noakes"
+        ],
+        "Description": "ASCII banner generation for .NET",
+        "LicenseUrl": "https://licenses.nuget.org/Apache-2.0",
+        "LicenseType": "Apache-2.0",
+        "Repository": {
+            "Type": "git",
+            "Url": "https://github.com/drewnoakes/figgle.git",
+            "Commit": "f200b944162185e29a7a3667b73ac65bfab1f38e"
+        }
+    },
+    {
+        "PackageName": "NHibernate",
+        "PackageVersion": "5.3.14",
+        "PackageUrl": "https://nhibernate.info/",
+        "Copyright": "Licensed under LGPL.",
+        "Authors": [
+            "NHibernate community",
+            " Hibernate community"
+        ],
+        "Description": "NHibernate is a mature, open source object-relational mapper for the .NET framework. It is actively developed, fully featured and used in thousands of successful projects.",
+        "LicenseUrl": "https://licenses.nuget.org/LGPL-2.1-only",
+        "LicenseType": "LGPL-2.1-only",
+        "Repository": {
+            "Type": "git",
+            "Url": "https://github.com/nhibernate/nhibernate-core.git",
+            "Commit": "37b502060c8a3e8abdbf793061945a3efe22179c"
+        }
+    },
+    {
+        "PackageName": "RabbitMQ.Client",
+        "PackageVersion": "6.4.0",
+        "PackageUrl": "https://www.rabbitmq.com/dotnet.html",
+        "Copyright": "Copyright © 2007-2020 VMware, Inc. or its affiliates.",
+        "Authors": [
+            "VMware"
+        ],
+        "Description": "The RabbitMQ .NET client is the official client library for C# (and, implicitly, other .NET languages)",
+        "LicenseUrl": "https://licenses.nuget.org/Apache-2.0%20OR%20MPL-2.0",
+        "LicenseType": "Apache-2.0 OR MPL-2.0",
+        "Repository": {
+            "Type": "git",
+            "Url": "https://github.com/rabbitmq/rabbitmq-dotnet-client.git",
+            "Commit": "ec8e55228ac781c816ef4bd666af1bbde72d8242"
+        }
+    }
+]

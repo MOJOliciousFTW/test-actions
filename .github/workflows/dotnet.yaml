@@ -24,4 +24,5 @@ jobs:
         uses: ./license-check-nuget
         with:
           entrypoint: ./license-check-nuget/test
+          file: TestProject.csproj
           create-report: "true"

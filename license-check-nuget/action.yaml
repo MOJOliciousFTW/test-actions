@@ -2,7 +2,11 @@ name: "Licence check for Nuget"
 description: "Verifies that licences of nuget packages present in the calling workflow are compliant"
 inputs:
   entrypoint:
-    description: "Path to project folder, .csproj or .sln file"
+    description: "Path to folder with allowed_licenses.json and project files"
+    required: false
+    default: "./"
+  file:
+    description: "Relative path from entrypoint to specific .csproj or .sln file"
     required: false
     default: "./"
   create-report:
@@ -16,7 +20,7 @@ runs:
       run: |
         dotnet new tool-manifest
         dotnet tool install --local dotnet-project-licenses
-        dotnet dotnet-project-licenses -i ./ -o --json licenses.json --print false
+        dotnet dotnet-project-licenses -i ${{ inputs.file }} -o --json licenses.json --print false
       working-directory: ${{ inputs.entrypoint }}
       shell: bash
 

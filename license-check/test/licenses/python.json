@@ -1,0 +1,68 @@
+[
+  {
+    "License": "Apache Software License",
+    "Name": "aiofiles",
+    "URL": "https://github.com/Tinche/aiofiles",
+    "Version": "23.1.0"
+  },
+  {
+    "License": "Apache Software License",
+    "Name": "sortedcontainers",
+    "URL": "http://www.grantjenks.com/docs/sortedcontainers/",
+    "Version": "2.4.0"
+  },
+  {
+    "License": "Apache Software License; BSD License",
+    "Name": "cryptography",
+    "URL": "https://github.com/pyca/cryptography",
+    "Version": "40.0.2"
+  },
+  {
+    "License": "Apache Software License; BSD License",
+    "Name": "python-dateutil",
+    "URL": "https://github.com/dateutil/dateutil",
+    "Version": "2.8.2"
+  },
+  {
+    "License": "BSD License",
+    "Name": "pycparser",
+    "URL": "https://github.com/eliben/pycparser",
+    "Version": "2.21"
+  },
+  {
+    "License": "GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Name": "asyncua",
+    "URL": "http://freeopcua.github.io/",
+    "Version": "1.0.2"
+  },
+  {
+    "License": "MIT License",
+    "Name": "aiosqlite",
+    "URL": "UNKNOWN",
+    "Version": "0.19.0"
+  },
+  {
+    "License": "MIT License",
+    "Name": "art",
+    "URL": "https://github.com/sepandhaghighi/art",
+    "Version": "5.9"
+  },
+  {
+    "License": "MIT License",
+    "Name": "cffi",
+    "URL": "http://cffi.readthedocs.org",
+    "Version": "1.15.1"
+  },
+  {
+    "License": "MIT License",
+    "Name": "pytz",
+    "URL": "http://pythonhosted.org/pytz",
+    "Version": "2023.3"
+  },
+  {
+    "License": "MIT License",
+    "Name": "six",
+    "URL": "https://github.com/benjaminp/six",
+    "Version": "1.16.0"
+  }
+]

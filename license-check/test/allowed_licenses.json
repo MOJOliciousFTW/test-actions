@@ -8,6 +8,7 @@
     "GNU Lesser General Public License v3 or later (LGPLv3+)"
   ],
   "packages": [
-    "asyncua"
+    "asyncua",
+    "typing_extensions"
   ]
 }
